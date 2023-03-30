@@ -7,25 +7,21 @@
     <title>ChessBoard </title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
- 
 </head>
 
 <body>
-<div class="chess">
-<h2> Chessboard</h2>
-<div class="table1">
-    <table class="tb">
-    
-    <?php
-        /*
-        * 
-        *
-        * @var 
-         * @param $row,$col
-        */
-        function drawChessBorad($rows, $cols)
-        {
-            if (!$rows >0 || !$cols > 0) 
+    <div class="chess">
+    <h2> Chessboard</h2>
+    <div class="table1">
+        <table class="tb">
+        
+        <?php
+            /* 
+            * Draw Chess Board
+            * 
+            * @param $row,$col
+            */
+            function drawChessBorad($rows, $cols)
             {
                 if (!$rows >0 && ! $cols>0) 
                 {
@@ -43,21 +39,18 @@
                 {
                     echo "columns must be greater than 0";
                 }
-            } elseif (!is_int($rows) || !is_int($cols))
+                if (!is_int($rows) && !is_int($cols)) 
                 {
-                    if (!is_int($rows) && !is_int($cols)) 
-                    {
-                        echo "rows and colums must be number.";
-                    } elseif (!is_int($rows))
-                    {
-                        echo "rows must be  number";
-                    } elseif (!is_int($cols)) 
-                    {
-                        echo "colums must be  number";
-                    }
-                } elseif ($rows && $cols) 
+                    echo "rows and colums must be number.";
+                } elseif (!is_int($rows))
                 {
-            
+                    echo "rows must be  number";
+                } elseif (!is_int($cols)) 
+                {
+                    echo "colums must be  number";
+                }
+                elseif ($rows && $cols) 
+                {
                     for ($i = 1; $i <= $rows; $i++) 
                     {
                         echo"<tr>";
@@ -72,15 +65,15 @@
                                 $color="white";
                             } echo " <td class='chess-blk {$color}' ></td>";
                         }
-                    // Add a line break after each row
-                    }   echo"</tr>";
-                
+                        
+                    }   
+                    echo"</tr>";
                 }
-        }
-    drawChessBorad(5,5);
-    ?>
-    </table>
-</div>
-</div>
+            }
+        drawChessBorad(5,5);
+        ?>
+        </table>
+    </div>
+    </div>
 </body>
 </html>
