@@ -19,7 +19,8 @@
 
         function drawChessBorad($rows, $cols)
         {
-            if (!$rows >0 || !$cols > 0) {
+            if (!$rows >0 || !$cols > 0) 
+            {
                 if (!$rows >0 && ! $cols>0) 
                 {
                     echo "rows and cols parameters must be greater than 0.";
