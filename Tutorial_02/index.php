@@ -25,11 +25,11 @@
                         echo "Error: Input must be an integer.";
                     }else if($row % 2 == 0) 
                     {
-                        echo "must be  positive odd number";
+                        echo "$row must be  positive odd number";
                     
                     } elseif($row <= 0)
                     {
-                        echo "must be positive number";
+                        echo "$row must be positive number";
                     }
                     else
                     {

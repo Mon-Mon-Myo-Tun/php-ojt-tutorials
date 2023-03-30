@@ -20,6 +20,9 @@ h2 {
   justify-content: center;
 }
 
+.tb{
+  border: 1px solid rgb(0, 0, 0,0.5);
+}
 .black {
   background-color: #000;
 }
@@ -31,6 +34,5 @@ h2 {
 .chess-blk {
   width: 50px;
   height: 50px;
-  border: 1px solid #000;
 
 }
