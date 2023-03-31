@@ -70,7 +70,7 @@
                     echo"</tr>";
                 }
             }
-        drawChessBorad(5,5);
+                drawChessBorad(5,5);
         ?>
         </table>
     </div>
