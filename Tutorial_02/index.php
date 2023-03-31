@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="stylesheet" href="css/rest.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -39,15 +39,15 @@
                         {
                             $i<=$n ? $m++ : $m--;
                             for($j=1;$j<=$row;$j++)
-                        {
-                            if(($j >= $n+1-$m ) && ($j<=$n-1+$m))
                             {
-                                echo "*";
-                            }else 
-                            {
-                                echo " &nbsp; ";
-                            }
-                        }   echo "<br>";
+                                if(($j >= $n+1-$m ) && ($j<=$n-1+$m))
+                                {
+                                    echo "*";
+                                }else 
+                                {
+                                    echo " &nbsp; ";
+                                }
+                            }   echo "<br>";
                         }
                     } 
                 }
