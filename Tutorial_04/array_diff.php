@@ -20,7 +20,6 @@
         }
         return json_encode($result);
     }
-
     $result = arrayDiff( $arr_one,$arr_two);
     echo $result;
 ?>
