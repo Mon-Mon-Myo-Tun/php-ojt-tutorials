@@ -1,30 +1,45 @@
+
 <?php
-function createPhoneNumber($numberArray)
-{
-    $phoneNumber = "(";
-    
-    for ($i = 0; $i < 3; $i++) {
-        $phoneNumber .= $numberArray[$i];
-    }
-    
-    $phoneNumber .= ") ";
-    
-    for ($i = 3; $i < 6; $i++) {
-        $phoneNumber .= $numberArray[$i];
-    }
-    
-    $phoneNumber .= "-";
-    
-    for ($i = 6; $i < 10; $i++) {
-        $phoneNumber .= $numberArray[$i];
-    }
-    
-    return $phoneNumber;
-}
+/* 
+    * Convert an Array to phone number format
+    * 
+    * @param $numberArray
 
-echo createPhoneNumber([7,1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); 
+*/
+
+    function createPhoneNumber($numberArray)
+    {
+       
+        $integervalue = count($numberArray) === count(array_filter($numberArray, 'is_int'));
+
+        if (!$integervalue) {
+            return "Input array must contain only integers.";
+        }
+
+        $phoneNumber = "(";
+        
+        for ($i = 0; $i < 3; $i++) {
+            $phoneNumber .= $numberArray[$i];
+        }
+        
+        $phoneNumber .= ") ";
+        
+        for ($i = 3; $i < 6; $i++) {
+            $phoneNumber .= $numberArray[$i];
+        }
+        
+        $phoneNumber .= "-";
+        
+        for ($i = 6; $i < count($numberArray); $i++) {
+            $phoneNumber .= $numberArray[$i];
+        }
+        
+        return $phoneNumber;
+    }
+
+echo createPhoneNumber([1,1, 2, 3, 4, 5, 6, 7, 8, 9, 0,1,5]); 
+echo "<br>";
+echo createPhoneNumber([2.4,"two","three", 'four', "five"]);
 
 
-// Result
-// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); // output => (123) 456-7890
-// createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 0]); // output => (111) 111-1110
+
