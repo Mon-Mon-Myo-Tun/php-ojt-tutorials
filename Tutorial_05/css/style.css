@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+th {
+  padding: 20px;
+}
+
+.main {
+  margin-top: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  max-width: 98%;
+}
+
+.content {
+  width: 95%;
+  padding: 10px 10px;
+}
+
+.tb-excel {
+  width: 100%;
+  text-align: left;
+}
+
+.tb-excel td {
+  padding: 20px;
+}
+
+.tb-excel tr {
+  height: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
