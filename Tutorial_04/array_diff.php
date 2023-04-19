@@ -1,9 +1,8 @@
 <?php
 /* 
-    * Compares the values of two (or more) arrays, and returns the differences.
-    * 
-    * @param $arr1,$arr2
-
+* Compares the values of two (or more) arrays, and returns the differences.
+* 
+* @param $arr1,$arr2
 */
     $arr_one = [1,2];
     $arr_two = [1];

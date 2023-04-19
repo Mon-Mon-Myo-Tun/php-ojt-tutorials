@@ -36,8 +36,6 @@
                 $error_msg = "Error uploading file.You need to add folder!";
             }
         }
-    }    
-
-    
+    }       
 ?>
 
