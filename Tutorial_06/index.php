@@ -12,7 +12,6 @@
 </head>
 <body>
     <?php  include "upload.php"; ?>
-    
     <main>
         <section class=" container ">
             <div class="row py-lg-5 d-flex">
@@ -31,9 +30,7 @@
                                 echo $error_msg; 
                             } 
                         ?>
-
                     </p>
-
                     <div class="card ">
                         <div class="card-title text-center ">Upload Image</div>
                         <div class="card-body">
@@ -46,9 +43,6 @@
                             <label>Choose Image</label>
                             <input type="file"  class="form-control" name='filename'>
                             <small class="text-danger"><?php echo $errorfilename; ?></small> <br>
-
-                        
-
                             <button type="submit" class="btn btn-dark text-white mt-3 btn-width" name="upload">Upload</button>
                             </form>
                         </div>
@@ -75,17 +69,17 @@
                         }
                     
                         $file_names[] = $file;
-                        $path = 'http://localhost/php-ojt-tutorials/Tutorial_06/' . $dir . '/' . $file;
+                        $path = 'http://localhost:8000/' . $dir . '/' . $file;
                         echo '<div class="col-md-4 mb-3">';
-                        echo '<div class="card">';
-                        echo '<img src="' . $path . '" class="card-img-top img-fluid">';
+                        echo '<div class="card card-hight">';
+                        echo '<img src="' . $path . '" class="card-img-top img-fluid img-hight">';
                         echo '<div class="card-body">';
                         echo '<p class="card-text text-center">' . $file  . '</p>';
-                        echo '<p class="card-text">' . $path . '</p>';
+                        echo '<p class="card-text txt-hight">' . $path . '</p>';
                         echo '<form method="post" action="">';
                         echo '<input type="hidden" name="image_folder" value="' . $dir . '">';
                         echo '<input type="hidden" name="image_file" value="' . $file . '">';
-                        echo '<button type="submit" class="btn btn-danger card-btn" name="delete_image">Delete</button>';
+                        echo '<button type="submit" class="btn btn-danger card-btn mt-4" name="delete_image">Delete</button>';
                         echo '</form>';
                         echo '</div>';
                         echo '</div>';
@@ -104,18 +98,14 @@
             {
                 $image_folder = $_POST['image_folder'];
                 $image_file = $_POST['image_file'];
-                $image_path = 'C:\\Apache24\\htdocs\\php-ojt-tutorials\\Tutorial_06\\' . $image_folder . '\\' . $image_file;
+                $image_path = 'D:/FinalOJT/php-ojt-tutorials/Tutorial_06/' . $image_folder . '\\' . $image_file;
                 if (file_exists($image_path))
                  {
                     if (unlink($image_path)) 
                     {
-                        echo "Image deleted successfully";
+                        echo '<script>alert("Image deleted successfully");</script>';
                     } 
                 } 
-                else 
-                {
-                    echo "Image not found";
-                }
             }
         }
     ?>
