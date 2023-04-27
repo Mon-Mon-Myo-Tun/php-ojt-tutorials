@@ -66,7 +66,7 @@
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label>Title</label>
-                                <input type="text" class="form-control" name="title">
+                                <input type="text" class="form-control" name="title" value="">
                                 <span class="text-danger"><?php echo $title_error; ?></span>
                             </div>
                             <div class="mb-3">
