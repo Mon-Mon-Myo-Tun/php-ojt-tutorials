@@ -21,12 +21,14 @@ class UserService implements UserServiceInterface
     {
         return $this->userDao->getText();
     }
-    public function validateText($request): object
+    
+    public function createTask(array $data): void
     {
-       return $this->userDao->validateText($request);
+        $this->userDao->createTask( $data);
     }
-    public function deleteText($tasks): void
+
+    public function deleteText($id): void
     {
-        $this->userDao->deleteText($tasks);
+        $this->userDao->deleteText($id);
     }
 }

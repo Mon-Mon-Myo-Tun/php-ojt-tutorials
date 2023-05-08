@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Models\Task;
+use App\Http\Requests\TaskCreateRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Contracts\Services\UserServiceInterface;
 
@@ -27,23 +26,17 @@ class TaskController extends Controller
         ]);
     }
 
-    public function task(Request $request) {
-        $validator =  $this->userService->validateText($request);
-        if ($validator->fails()) {
-            return redirect('/')
-                ->withInput()
-                ->withErrors($validator);
-        }
-        else {
-            $task = new Task;
-            $task->name = $request->name;
-            $task->save();
+    public function task(TaskCreateRequest $request) {
+        $this->userService->createTask($request->only([
+            'name',
+           
+        ]));
 
         return redirect('/');
-        }
+      
     }
-    public function remove(Task $tasks) {
-        $this->userService->deleteText($tasks);
+    public function remove($id) {
+        $this->userService->deleteText($id);
         return redirect('/');
     }
 }

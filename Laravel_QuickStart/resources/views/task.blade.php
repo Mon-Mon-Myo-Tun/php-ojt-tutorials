@@ -38,7 +38,7 @@
                                 <td class="table-text">
                                     <div>{{ $tasks->name }}</div>
                                 </td>
-
+                                
                                 <td>
                                 <form action="{{ url('taskList/'.$tasks->id) }}" method="POST">
                                     {{ csrf_field() }}
@@ -47,6 +47,7 @@
                                     <button type="submit" class="btn btn-danger">
                                     <i class="fa fa-trash"></i> Delete
                                     </button>
+                                </form>
                                 </td>
                             </tr>
                         @endforeach

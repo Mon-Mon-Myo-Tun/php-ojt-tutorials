@@ -4,6 +4,6 @@ namespace App\Contracts\Services;
 interface UserServiceInterface
 {
     public function getText(): object;
-    public function validateText($request): object;
-    public function deleteText($tasks): void;
+    public function createTask(array $data): void;
+    public function deleteText($id): void;
 }

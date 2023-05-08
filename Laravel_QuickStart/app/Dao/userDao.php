@@ -10,18 +10,19 @@ class UserDao implements UserDaoInterface
 {
     public function getText(): object
     {
-        return Task::orderBy('created_at', 'asc')->get();
+        return Task::orderBy('created_at', 'desc')->get();
     }
 
-    public function validateText($request): object
+    public function createTask(array $data): void
     {
-        return  Validator::make($request->all(), [
-            'name' => 'required|max:255',
+        Task::create([
+            'name' => $data['name']
         ]);
     }
-
-    public function deleteText($tasks): void
+    
+    public function deleteText($id): void
     {
-        $tasks->delete();
+        $task = Task::findOrFail($id);
+        $task->delete();
     }
 }

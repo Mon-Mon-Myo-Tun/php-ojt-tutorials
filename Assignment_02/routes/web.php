@@ -15,7 +15,7 @@ use App\Http\Controllers\StudentController;
 */
 
 
-Route::get('/createmajor',[StudentController::class,'CreateMajor'])->name('create#major');
+Route::get('/createmajor',[MajorController::class,'CreateMajor'])->name('create#major');
 Route::post('/addmajor',[StudentController::class,'AddMajor'])->name('add#major');
 Route::get('/showmajorlist',[StudentController::class,'ShowMajorList'])->name('show#list');
 Route::get('/editmajor/{id}/edit',[StudentController::class,'EditMajor'])->name('major#edit');

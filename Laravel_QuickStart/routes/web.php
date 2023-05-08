@@ -10,4 +10,4 @@ Route::get('/', function () {
 
 Route::get('/',[TaskController::class,'show'])->name('show#list');
 Route::post('/taskList',[TaskController::class,'task'])->name('task#list');
-Route::delete('/taskList/{tasks}',[TaskController::class,'remove'])->name('remove#list');
+Route::delete('/taskList/{id}',[TaskController::class,'remove'])->name('remove#list');

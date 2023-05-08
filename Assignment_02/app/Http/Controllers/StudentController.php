@@ -105,7 +105,7 @@ class StudentController extends Controller
             $student->email = $request->email;
             $student->address = $request->address;
             $student->save();
-            return redirect('/studentlist');
+            return redirect()->route('student#list');
         }
     }
 
